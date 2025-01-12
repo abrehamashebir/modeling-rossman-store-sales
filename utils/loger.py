@@ -8,8 +8,17 @@ def logger(name):
         level=logging.INFO,  # Minimum level of messages to log
         format='%(asctime)s - %(levelname)s - %(name)s - %(message)s', # log message format
         handlers=[
-            logging.FileHandler("experiment.log"), # save to logfile
+            logging.FileHandler("../data/experiment.log"), # save to logfile
             logging.StreamHandler() # print to console
         ]
     )
     return logger
+
+# def close_loggers():
+#             """Closes all the open logging handlers."""
+#             for logger_name, logger in logging.Logger.manager.loggerDict.items(): # get all registered loggers
+#                 if isinstance(logger, logging.Logger): # only use the ones that are loggers
+#                     for handler in logger.handlers:
+#                         handler.close()  # Close any file handlers.
+#                         logger.removeHandler(handler) # remove the handler from the logger
+                        
