@@ -6,7 +6,7 @@ def logger(name):
     if not logger.hasHandlers():
       logging.basicConfig(
         level=logging.INFO,  # Minimum level of messages to log
-        format='%(asctime)s - %(levelname)s - %(name)s - %(message)s', # log message format
+        format='%(asctime)s - %(filename)s - %(levelname)s - %(name)s - %(message)s', # log message format
         handlers=[
             logging.FileHandler("../data/experiment.log"), # save to logfile
             logging.StreamHandler() # print to console
